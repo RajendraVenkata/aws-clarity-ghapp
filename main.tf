@@ -143,17 +143,17 @@ resource "aws_instance" "web" {
   # We run a remote provisioner on the instance after creating it.
   # In this case, we just install nginx and start it. By default,
   # this should be on port 80
-  provisioner "remote-exec" {
-    inline = [
-      "~/.local/bin/aws sns publish --target-arn ${module.notify-slack.this_slack_topic_arn} --region ${var.aws_region} --message \"server provisioned at ip ${aws_instance.web.public_ip}\"",
-    ]
-  }
-  tags = {
-    AppName    = "TFDemoApp"
-    AppOwner   = "Jon"
-    CostCenter = "TFE-PM-0001"
-    Name       = "Clarity TF Demo App"
-  }
+  #provisioner "remote-exec" {
+  #  inline = [
+  #    "~/.local/bin/aws sns publish --target-arn ${module.notify-slack.this_slack_topic_arn} --region ${var.aws_region} --message \"server provisioned at ip ${aws_instance.web.public_ip}\"",
+  #  ]
+  #}
+  #tags = {
+  #  AppName    = "TFDemoApp"
+  #  AppOwner   = "Jon"
+  #  CostCenter = "TFE-PM-0001"
+  #  Name       = "Clarity TF Demo App"
+  #}
 }
 
 #module "notify-slack" {
