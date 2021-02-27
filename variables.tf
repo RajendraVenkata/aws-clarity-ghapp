@@ -20,9 +20,9 @@ variable "slack_topic_name" {
   default     = "slack-topic"
 }
 
-variable "slack_webhook_url" {
-  description = "Slack webhook URL"
-}
+#variable "slack_webhook_url" {
+#  description = "Slack webhook URL"
+#}
 
 variable "ami_name" {
   description = "AMI image to use"
